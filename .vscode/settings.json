@@ -1,0 +1,5 @@
+{
+  "python.analysis.typeCheckingMode": "strict",
+  "python.pythonPath": "~/.asdf/shims/python",
+  "editor.formatOnSave": true
+}
