@@ -42,6 +42,9 @@ antigen theme romkatv/powerlevel10k
 
 # apply config
 antigen apply
+
+# my settings :)
+export VISUAL=vim
 '''
 
 REQUIRED_TOOLS = (
