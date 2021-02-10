@@ -84,10 +84,9 @@ def main() -> None:
     missing_tools = tuple(
         tool for tool in REQUIRED_TOOLS if which(tool) is None)
     if missing_tools:
-        tool_list = " ".join(missing_tools)
-        print(f"Installing missing tools: {tool_list}")
+        print(f"Installing missing tools: {', '.join(missing_tools)}")
         cmd('sudo', 'apt', 'update')
-        cmd('sudo', 'apt', 'install', *tool_list)
+        cmd('sudo', 'apt', 'install', *missing_tools)
 
     print('Checking for asdf')
     asdf_path = Path.home() / '.asdf'
