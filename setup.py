@@ -12,7 +12,7 @@ CONFIG_CONTENTS = '''
 # Andy's base zsh config
 
 # Run the following command to install or update this config:
-# python3 <(curl -sLH 'Cache-Control: no-cache' TODO)
+# python3 <(curl -sLH 'Cache-Control: no-cache' https://raw.githubusercontent.com/AndyBarron/shell/main/setup.py)
 
 # init antigen
 source ~/.antigen.zsh
