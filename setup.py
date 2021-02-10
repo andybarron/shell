@@ -25,6 +25,7 @@ antigen bundle git
 antigen bundle asdf
 antigen bundle ssh-agent
 antigen bundle fzf
+antigen bundle autojump
 
 # third-party oh-my-zsh plugins
 antigen bundle zsh-users/zsh-autosuggestions
