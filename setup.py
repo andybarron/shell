@@ -78,7 +78,6 @@ def pushd(dir: Union[str, Path]) -> None:
     _stack.append(getcwd())
     chdir(dir)
 
-
 def popd() -> None:
     chdir(_stack.pop())
 
@@ -129,7 +128,7 @@ def main() -> None:
     zshrc_line = f'source ~/{CONFIG_FILENAME}'
     found_line = False
     with open(zshrc_path, 'r') as f:
-        found_line = any(line == zshrc_line for line in f)
+        found_line = any(line.rstrip() == zshrc_line for line in f)
     if not found_line:
         print('Adding source line to .zshrc')
         with open(zshrc_path, 'a') as f:
@@ -139,7 +138,7 @@ def main() -> None:
     if zsh_path:
         print('Checking default shell')
         shell = environ['SHELL']
-        if shell and (shell != 'zsh'):
+        if shell and (shell != zsh_path):
             print('Changing default shell to zsh')
             cmd('chsh', '-s', zsh_path)
     else:
