@@ -44,7 +44,7 @@ antigen theme romkatv/powerlevel10k
 antigen apply
 
 # my settings :)
-export VISUAL=nvim
+export VISUAL=vim
 '''
 
 REQUIRED_TOOLS = (
@@ -52,7 +52,6 @@ REQUIRED_TOOLS = (
     'git',
     'autojump',
     'fzf',
-    'neovim',
 )
 
 
