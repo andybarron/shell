@@ -44,7 +44,7 @@ antigen theme romkatv/powerlevel10k
 antigen apply
 
 # my settings :)
-export VISUAL=vim
+export VISUAL=nvim
 '''
 
 REQUIRED_TOOLS = (
@@ -52,6 +52,7 @@ REQUIRED_TOOLS = (
     'git',
     'autojump',
     'fzf',
+    # TODO: check for nvm, then install neovim
 )
 
 
