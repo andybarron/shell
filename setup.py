@@ -17,6 +17,10 @@ CONFIG_CONTENTS = '''
 # init antigen
 source ~/.antigen.zsh
 
+# configure ssh-agent plugin before zsh:
+# https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/ssh-agent
+zstyle :omz:plugins:ssh-agent lifetime 1h
+
 # init oh-my-zsh
 antigen use oh-my-zsh
 
