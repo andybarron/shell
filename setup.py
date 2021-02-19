@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 import subprocess
 from shutil import which
 from pathlib import Path
