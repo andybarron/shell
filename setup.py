@@ -21,6 +21,7 @@ source ~/.antigen.zsh
 # configure ssh-agent plugin before zsh:
 # https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/ssh-agent
 zstyle :omz:plugins:ssh-agent lifetime 1h
+zstyle :omz:plugins:ssh-agent agent-forwarding on
 
 # init oh-my-zsh
 antigen use oh-my-zsh
