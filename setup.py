@@ -18,28 +18,18 @@ CONFIG_CONTENTS = '''
 # init antigen
 source ~/.antigen.zsh
 
-# configure ssh-agent plugin before zsh:
-# https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/ssh-agent
-zstyle :omz:plugins:ssh-agent lifetime 1h
-zstyle :omz:plugins:ssh-agent agent-forwarding on
-
 # init oh-my-zsh
 antigen use oh-my-zsh
 
 # default oh-my-zsh plugins
 antigen bundle git
 antigen bundle asdf
-antigen bundle ssh-agent
-antigen bundle fzf
-antigen bundle autojump
 
 # third-party oh-my-zsh plugins
 antigen bundle zsh-users/zsh-autosuggestions
 ZSH_AUTOSUGGEST_STRATEGY=(completion history)
 ZSH_AUTOSUGGEST_USE_ASYNC=true
 
-antigen bundle b4b4r07/enhancd
-antigen bundle supercrabtree/k
 antigen bundle zsh-users/zsh-completions
 antigen bundle zsh-users/zsh-syntax-highlighting # must be last
 
@@ -56,9 +46,8 @@ export VISUAL=nvim
 REQUIRED_TOOLS = (
     'zsh',
     'git',
-    'autojump',
-    'fzf',
-    # TODO: check for nvm, then install neovim
+    'neovim',
+    'byobu',
 )
 
 
@@ -90,13 +79,9 @@ def popd() -> None:
 
 
 def main() -> None:
-    print('Checking for required tools')
-    missing_tools = tuple(
-        tool for tool in REQUIRED_TOOLS if which(tool) is None)
-    if missing_tools:
-        print(f"Installing missing tools: {', '.join(missing_tools)}")
-        cmd('sudo', 'apt', 'update')
-        cmd('sudo', 'apt', 'install', *missing_tools)
+    print(f"Installing required tools: {', '.join(REQUIRED_TOOLS)}")
+    cmd('sudo', 'apt', 'update')
+    cmd('sudo', 'apt', 'install', *REQUIRED_TOOLS)
 
     print('Checking for asdf')
     asdf_path = Path.home() / '.asdf'
