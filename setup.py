@@ -24,6 +24,7 @@ antigen use oh-my-zsh
 # default oh-my-zsh plugins
 antigen bundle git
 antigen bundle asdf
+antigen bundle kubectl
 antigen bundle nnao45/zsh-kubectl-completion
 
 # third-party oh-my-zsh plugins
