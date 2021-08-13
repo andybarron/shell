@@ -26,6 +26,7 @@ antigen bundle git
 antigen bundle asdf
 antigen bundle nnao45/zsh-kubectl-completion
 antigen bundle kubectl
+antigen bundle terraform
 
 # third-party oh-my-zsh plugins
 antigen bundle zsh-users/zsh-autosuggestions
